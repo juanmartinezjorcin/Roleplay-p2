@@ -1,6 +1,8 @@
+using System;
+
 namespace RoleplayGame
 {
-    public class Wizard
+    public class Wizard : ICharacter
     {
         private int health = 100;
 
@@ -43,11 +45,37 @@ namespace RoleplayGame
             }
         }
 
-        public void ReceiveAttack(int power)
+        public void ShowStats()
         {
-            if (this.DefenseValue < power)
+            // Su nombre.
+            Console.WriteLine($"|\nv\n{this.Name}");
+            // Su salud.
+            Console.WriteLine($"\tSalud: {this.Health}");
+            // Su defensa.
+            Console.WriteLine($"\tDefensa: {this.DefenseValue}");
+            // Su ataque.
+            Console.WriteLine($"\tAtaque: {this.AttackValue}\n");
+        }
+
+        public void Attack(ICharacter character)
+        {
+            if (elf.Defense >= this.Attack) // Verificar si el ataque supera la defensa del elfo
             {
-                this.Health -= power - this.DefenseValue;
+                return $"{this.Name} no dañó a {elf.Name}";
+            }
+            else
+            {
+                int damage = this.Attack - character.DefenseValue; // Calcular el daño
+                elf.Health -= damage; // Restar el daño de la salud del elfo
+
+                if (elf.Health <= 0) // Verificar si el elfo está muerto
+                {
+                    return $"{elf.Name} fue asesinado por {wizard.Name}";
+                }
+                else
+                {
+                    return $"{elf.Name} perdió {damage} de vida por el ataque de {wizard.Name}";
+                }
             }
         }
 
