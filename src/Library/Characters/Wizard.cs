@@ -39,7 +39,7 @@ namespace RoleplayGame
             {
                 return this.health;
             }
-            private set
+            set
             {
                 this.health = value < 0 ? 0 : value;
             }
@@ -59,22 +59,22 @@ namespace RoleplayGame
 
         public void Attack(ICharacter character)
         {
-            if (elf.Defense >= this.Attack) // Verificar si el ataque supera la defensa del elfo
+            if (character.DefenseValue >= this.AttackValue) // Verificar si el ataque supera la defensa
             {
-                return $"{this.Name} no dañó a {elf.Name}";
+                Console.WriteLine( $"{this.Name} no dañó a {character.Name}");
             }
             else
             {
-                int damage = this.Attack - character.DefenseValue; // Calcular el daño
-                elf.Health -= damage; // Restar el daño de la salud del elfo
+                int damage = this.AttackValue - character.DefenseValue; // Calcular el daño
+                character.Health -= damage; // Restar el daño de la salud del elfo
 
-                if (elf.Health <= 0) // Verificar si el elfo está muerto
+                if (character.Health <= 0) // Verificar si el personaje sobrevivio está muerto
                 {
-                    return $"{elf.Name} fue asesinado por {wizard.Name}";
+                    Console.WriteLine( $"{character.Name} fue asesinado por {this.Name}" );
                 }
                 else
                 {
-                    return $"{elf.Name} perdió {damage} de vida por el ataque de {wizard.Name}";
+                    Console.WriteLine( $"{character.Name} perdió {damage} de vida por el ataque de {this.Name}" );
                 }
             }
         }
