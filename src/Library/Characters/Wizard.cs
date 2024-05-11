@@ -83,5 +83,12 @@ namespace RoleplayGame
         {
             this.Health = 100;
         }
+
+        public void GetItem(Iitem item)
+        {
+
+        }
+
+
     }
 }

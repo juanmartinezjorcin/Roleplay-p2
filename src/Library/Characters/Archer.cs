@@ -1,6 +1,6 @@
 using System;
 
-namespace RoleplayGame
+namespace RoleplayGame 
 {
     public class Archer : ICharacter
     {
@@ -83,5 +83,25 @@ public int Health
         {
             this.Health = 100;
         }
+
+
+        public void GetItem(Iitem item)
+        {
+            if (item is Bow)
+            {
+                this.Bow = (Bow)item;
+            }
+            else if (item is Helmet)
+            {
+                this.Helmet = (Helmet)item;
+            }
+            else
+            {
+                Console.WriteLine("Este personaje no puede equipar el ítem");
+            }
+        }
+
+
+
     }
 }

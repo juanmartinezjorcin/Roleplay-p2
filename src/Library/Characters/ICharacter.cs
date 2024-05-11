@@ -10,5 +10,7 @@
         void ShowStats();
         void Attack(ICharacter character);
         void Cure();
+
+        void GetItem(Iitem item);
     }
 }
