@@ -31,5 +31,8 @@ namespace RoleplayGame
                 return value;
             }
         }
+
+        
+        public bool itsMagic { get; } = true;
     }
 }

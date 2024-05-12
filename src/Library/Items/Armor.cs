@@ -1,3 +1,5 @@
+using System;
+
 namespace RoleplayGame
 {
     public class Armor : Iitem
@@ -9,5 +11,7 @@ namespace RoleplayGame
                 return 25;
             }
         }
+
+        public bool itsMagic { get; } = false;
     }
 }

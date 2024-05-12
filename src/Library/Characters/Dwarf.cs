@@ -19,6 +19,8 @@ namespace RoleplayGame
 
         public Helmet Helmet { get; set; }
 
+        public Iitem OtherItem { get; set; }
+
         public int AttackValue
         {
             get
@@ -87,8 +89,31 @@ namespace RoleplayGame
         }
 
         public void GetItem(Iitem item)
-        {
-
+        {   
+            if (item.itsMagic)
+            {
+                Console.WriteLine("El personaje no puede equipar este item");
+            
+            }
+            else
+            {
+                if (item is Axe)
+                {
+                    this.Axe = (Axe)item;
+                }
+                else if (item is Shield)
+                {
+                    this.Shield = (Shield)item;
+                }
+                else if (item is Helmet)
+                {
+                    this.Helmet = (Helmet)item;
+                }
+                else
+                {
+                    this.OtherItem = item;
+                }
+            }        
         }
     }
 }

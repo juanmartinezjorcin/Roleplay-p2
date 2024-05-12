@@ -17,6 +17,8 @@ namespace RoleplayGame
 
         public Staff Staff { get; set; }
 
+        public Iitem OtherItem { get; set; }
+
         public int AttackValue
         {
             get
@@ -86,9 +88,39 @@ namespace RoleplayGame
 
         public void GetItem(Iitem item)
         {
+            if (item is SpellsBook)
+            {
+                this.SpellsBook = (SpellsBook)item;
+            }
+            else if (item is Staff)
+            {
+                this.Staff = (Staff)item;
+            }
+            else
+            {
+                this.OtherItem = item;
+            }
 
         }
 
-
+        public void RemoveItem(Iitem item)
+        {
+            if (item is SpellsBook && this.SpellsBook == item)
+            {
+                this.SpellsBook = null;
+            }
+            else if (item is Staff && this.Staff == item)
+            {
+                this.Staff = null;
+            }
+            else if (this.OtherItem == item)
+            {
+                this.OtherItem = null;
+            }
+            else
+            {
+                Console.WriteLine("El objeto no está equipado en este personaje.");
+            }
+        }
     }
 }

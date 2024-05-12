@@ -9,5 +9,8 @@ namespace RoleplayGame
                 return 14;
             }
         }
+
+
+        public bool itsMagic { get; } = false;
     }
 }
