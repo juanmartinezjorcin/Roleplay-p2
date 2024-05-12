@@ -88,17 +88,21 @@ namespace RoleplayGame
 
         public void GetItem(Iitem item)
         {
-            if (item is SpellsBook)
+            if (item is SpellsBook && this.SpellsBook == null)
             {
                 this.SpellsBook = (SpellsBook)item;
             }
-            else if (item is Staff)
+            else if (item is Staff && this.Staff == null)
             {
                 this.Staff = (Staff)item;
             }
+            else if (this.OtherItem == null)
+            {
+            this.OtherItem = item;
+            }
             else
             {
-                this.OtherItem = item;
+                Console.WriteLine("El personaje no puede equipar este item");
             }
 
         }

@@ -97,24 +97,51 @@ namespace RoleplayGame
             }
             else
             {
-                if (item is Sword)
+                if (item is Sword && this.Sword == null)
                 {
                     this.Sword = (Sword)item;
                 }
-                else if (item is Shield)
+                else if (item is Shield && this.Shield == null)
                 {
                     this.Shield = (Shield)item;
                 }
-                else if (item is Armor)
+                else if (item is Armor && this.Armor == null)
                 {
                     this.Armor = (Armor)item;
                 }
+                else if (this.OtherItem == null)
+                {
+                this.OtherItem = item;
+                }
                 else
                 {
-                    this.OtherItem = item;
+                 Console.WriteLine("El personaje no puede equipar este item");
                 }
             } 
             
+        }
+        public void RemoveItem(Iitem item)
+        {
+            if (item is Sword && this.Sword == item)
+            {
+                this.Sword = null;
+            }
+            else if (item is Armor && this.Armor == item)
+            {
+                this.Armor = null;
+            }
+            else if (item is Shield && this.Shield == item)
+            {
+                this.Shield = null;
+            }
+            else if (this.OtherItem == item)
+            {
+                this.OtherItem = null;
+            }
+            else
+            {
+                Console.WriteLine("El objeto no está equipado en este personaje.");
+            }
         }
 
         
