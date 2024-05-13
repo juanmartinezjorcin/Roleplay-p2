@@ -4,7 +4,7 @@ namespace RoleplayGame
 {
     public class Archer : ICharacter
     {
-        private int health = 100;
+        private int health = 120;
 
         public Archer(string name)
         {
@@ -35,15 +35,23 @@ namespace RoleplayGame
             }
         }
 
-public int Health
+        public int Health
         {
             get
             {
                 return this.health;
             }
             set
-            {
-                this.health = value < 0 ? 0 : value;
+            {   
+                if(value < 0)
+                {
+                this.health = 0;
+                }
+                else
+                {
+                this.health = value > 150 ? 150 : value;
+                }
+                
             }
         }
 
@@ -81,11 +89,10 @@ public int Health
             }
         }
 
-        public void Cure()
+        public void Cure(int curacion)
         {
-            this.Health = 100;
+            this.Health += curacion;
         }
-
 
         public void GetItem(Iitem item)
         {

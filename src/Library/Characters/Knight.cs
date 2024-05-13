@@ -4,7 +4,7 @@ namespace RoleplayGame
 {
     public class Knight : ICharacter
     {
-        private int health = 100;
+        private int health = 180;
 
         public Knight(string name)
         {
@@ -44,13 +44,21 @@ namespace RoleplayGame
                 return this.health;
             }
             set
-            {
-                this.health = value < 0 ? 0 : value;
+            {   
+                if(value < 0)
+                {
+                this.health = 0;
+                }
+                else
+                {
+                this.health = value > 180 ? 180 : value;
+                }
+                
             }
         }
 
 
-                public void ShowStats()
+        public void ShowStats()
         {
             // Su nombre.
             Console.WriteLine($"|\nv\n{this.Name}");
@@ -83,9 +91,9 @@ namespace RoleplayGame
                 }
             }
         }
-        public void Cure()
+        public void Cure(int curacion)
         {
-            this.Health = 100;
+            this.Health += curacion;
         }
 
         public void GetItem(Iitem item)

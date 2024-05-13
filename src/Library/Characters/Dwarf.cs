@@ -3,8 +3,8 @@ using System;
 namespace RoleplayGame
 {
     public class Dwarf : ICharacter
-    {
-        private int health = 100;
+    {   
+        private int health = 200 ;
 
         public Dwarf(string name)
         {
@@ -44,8 +44,16 @@ namespace RoleplayGame
                 return this.health;
             }
             set
-            {
-                this.health = value < 0 ? 0 : value;
+            {   
+                if(value < 0)
+                {
+                this.health = 0;
+                }
+                else
+                {
+                this.health = value > 200 ? 200 : value;
+                }
+                
             }
         }
 
@@ -83,9 +91,9 @@ namespace RoleplayGame
             }
         }
 
-        public void Cure()
+        public void Cure(int curacion)
         {
-            this.Health = 100;
+            this.Health += curacion;
         }
 
         public void GetItem(Iitem item)

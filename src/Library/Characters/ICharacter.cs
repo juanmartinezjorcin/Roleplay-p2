@@ -11,7 +11,7 @@
 
         void ShowStats();
         void Attack(ICharacter character);
-        void Cure();
+        void Cure(int curacion);
 
         void GetItem(Iitem item);
 

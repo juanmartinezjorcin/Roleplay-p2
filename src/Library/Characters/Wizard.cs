@@ -4,7 +4,7 @@ namespace RoleplayGame
 {
     public class Wizard : ICharacter
     {
-        private int health = 100;
+        private int health = 120;
 
         public Wizard(string name)
         {
@@ -42,8 +42,16 @@ namespace RoleplayGame
                 return this.health;
             }
             set
-            {
-                this.health = value < 0 ? 0 : value;
+            {   
+                if(value < 0)
+                {
+                this.health = 0;
+                }
+                else
+                {
+                this.health = value > 120 ? 120 : value;
+                }
+                
             }
         }
 
@@ -81,9 +89,9 @@ namespace RoleplayGame
             }
         }
 
-        public void Cure()
+        public void Cure(int curacion)
         {
-            this.Health = 100;
+            this.Health += curacion;
         }
 
         public void GetItem(Iitem item)
