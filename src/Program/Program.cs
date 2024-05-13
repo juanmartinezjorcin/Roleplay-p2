@@ -11,13 +11,17 @@ namespace Program
             book.Spells = new Spell[]{ new Spell() };
 
             Wizard gandalf = new Wizard("Gandalf");
-            gandalf.Staff = new Staff();
+            Staff staff = new Staff();
+            gandalf.GetItem(staff);
             gandalf.SpellsBook = book;
 
             Dwarf gimli = new Dwarf("Gimli");
-            gimli.Axe = new Axe();
-            gimli.Helmet = new Helmet();
-            gimli.Shield = new Shield();
+            Axe axe = new Axe();
+            gimli.GetItem(new Axe());
+            Helmet helmet = new Helmet();
+            gimli.GetItem(helmet);
+            Shield shield = new Shield();
+            gimli.GetItem(new Shield());
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
             Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
@@ -26,7 +30,7 @@ namespace Program
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
 
-            gimli.Cure();
+            gimli.Cure(int.MaxValue);
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
         }
