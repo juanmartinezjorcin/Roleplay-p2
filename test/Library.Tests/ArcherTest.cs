@@ -42,6 +42,20 @@ namespace RoleplayGameTests
             // Assert
             Assert.AreSame(bow, archer.Bow); // Verifica que el arquero haya equipado el arco correctamente
         }
+        
+        [Test]
+        public void TestKnightGetMagicItem()
+        {
+            // Arrange
+            Archer archer = new Archer("Test Archer");
+            SpellsBook spellsBook = new SpellsBook(); // Supongamos que SpellsBook es una clase que representa un libro de hechizos
+
+            // Act
+            knight.GetItem(spellsBook);
+
+            // Assert
+            Assert.IsNull(archer.OtherItem); // Verifica que el libro de hechizos no se haya equipado correctamente en el caballero
+        }
 
         [Test]
         public void TestArcherRemoveItem()

@@ -42,6 +42,21 @@ namespace RoleplayGameTests
             // Assert
             Assert.AreSame(axe, dwarf.Axe); // Verifica que el enano haya equipado el hacha correctamente
         }
+        
+        [Test]
+        public void TestKnightGetMagicItem()
+        {
+            // Arrange
+            Dwarf dwarf = new Dwarf("Test Dwarf");
+            SpellsBook spellsBook = new SpellsBook(); // Supongamos que SpellsBook es una clase que representa un libro de hechizos
+
+            // Act
+            dwarf.GetItem(spellsBook);
+
+            // Assert
+            Assert.IsNull(dwarf.OtherItem); // Verifica que el libro de hechizos no se haya equipado correctamente en el caballero
+        }
+
 
         [Test]
         public void TestDwarfRemoveItem()

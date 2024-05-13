@@ -44,6 +44,20 @@ namespace RoleplayGameTests
         }
 
         [Test]
+        public void TestKnightGetMagicItem()
+        {
+            // Arrange
+            Knight knight = new Knight("Test Knight");
+            SpellsBook spellsBook = new SpellsBook(); // Supongamos que SpellsBook es una clase que representa un libro de hechizos
+
+            // Act
+            knight.GetItem(spellsBook);
+
+            // Assert
+            Assert.IsNull(knight.OtherItem); // Verifica que el libro de hechizos no se haya equipado correctamente en el caballero
+        }
+
+        [Test]
         public void TestKnightRemoveItem()
         {
             // Arrange
