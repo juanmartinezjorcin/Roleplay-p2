@@ -45,13 +45,13 @@ namespace RoleplayGame
             }
             set
             {   
-                if(value < 0)
+                if(value < 0) //revisamos que el valor si el valor menor a 0 y si lo es cambio health
                 {
                 this.health = 0;
                 }
-                else
+                else // si no es menor a 0
                 {
-                this.health = value > 180 ? 180 : value;
+                this.health = value > 180 ? 180 : value; // veo que no supere el valor maximo de salud de la clase
                 }
                 
             }
@@ -105,7 +105,7 @@ namespace RoleplayGame
             }
             else
             {
-                if (item is Sword && this.Sword == null)
+                if (item is Sword && this.Sword == null)// veo que tipo de objeto es item y si hay un item equipado
                 {
                     this.Sword = (Sword)item;
                 }
@@ -130,7 +130,7 @@ namespace RoleplayGame
         }
         public void RemoveItem(Iitem item)
         {
-            if (item is Sword && this.Sword == item)
+            if (item is Sword && this.Sword == item)//verifico el tipo del item y que no halla ningun otro equipado
             {
                 this.Sword = null;
             }
