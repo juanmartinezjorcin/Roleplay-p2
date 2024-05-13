@@ -1,9 +1,10 @@
 using NUnit.Framework;
+using System;
 using RoleplayGame;
 
 namespace RoleplayGameTests
 {
-    public class WizardTests
+    public class UnitTests
     {
         [Test]
         public void TestWizardCure()
@@ -91,10 +92,7 @@ namespace RoleplayGameTests
             // Assert
             Assert.AreEqual(spellsBook.DefenseValue + staff.DefenseValue, defenseValue); // Verifica que el valor de defensa del mago sea igual a la suma de los valores de defensa del libro de hechizos y el bastón
         }
-    }
 
-    public class KnightTests
-    {
         [Test]
         public void TestKnightCure()
         {
@@ -107,17 +105,11 @@ namespace RoleplayGameTests
         [Test]
         public void TestKnightShowStats()
         {
-            // Arrange
             Knight knight = new Knight("Test Knight");
-            knight.Health = 120; // Establece la salud del caballero en 120
-
-            // Act
+            knight.Health = 120;
             string expectedStats = $"|\nv\nTest Knight\n\tSalud: 120\n\tDefensa: 0\n\tAtaque: 0\n";
             string actualStats = CaptureConsoleOutput(() => knight.ShowStats());
-
-            // Assert
-            Assert.AreEqual(expectedStats, actualStats); // Verifica que la salida coincida con las estadísticas esperadas
-        }
+            Assert.AreEqual(expectedStats, actualStats); 
 
         [Test]
         public void TestKnightGetItem()
@@ -294,10 +286,7 @@ namespace RoleplayGameTests
             // Assert
             Assert.AreEqual(shield.DefenseValue + helmet.DefenseValue, defenseValue); // Verifica que el valor de defensa del enano sea igual a la suma de los valores de defensa del escudo y el casco
         }
-    }
 
-    public class ArcherTests
-    {
         [Test]
         public void TestArcherCure()
         {
