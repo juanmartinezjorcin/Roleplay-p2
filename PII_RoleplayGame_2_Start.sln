@@ -9,17 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "src\Library\Libr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "src\Program\Program.csproj", "{4739E719-77CD-43EF-B204-79661C30ABE0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4AD47FAA-D175-4ED7-A882-FA0BF7189E5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Library", "test\Test.Library\Test.Library.csproj", "{2AB1575E-8FDC-4057-8B29-1E5C3F58F896}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BE9478C5-80DF-4772-B622-717F5E391005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,14 +23,12 @@ Global
 		{4739E719-77CD-43EF-B204-79661C30ABE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4739E719-77CD-43EF-B204-79661C30ABE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4739E719-77CD-43EF-B204-79661C30ABE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AB1575E-8FDC-4057-8B29-1E5C3F58F896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AB1575E-8FDC-4057-8B29-1E5C3F58F896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AB1575E-8FDC-4057-8B29-1E5C3F58F896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AB1575E-8FDC-4057-8B29-1E5C3F58F896}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BE9478C5-80DF-4772-B622-717F5E391005} = {8F7FA281-D6EF-45CA-89BF-FB6EB45CBD03}
 		{4739E719-77CD-43EF-B204-79661C30ABE0} = {8F7FA281-D6EF-45CA-89BF-FB6EB45CBD03}
-		{2AB1575E-8FDC-4057-8B29-1E5C3F58F896} = {4AD47FAA-D175-4ED7-A882-FA0BF7189E5A}
 	EndGlobalSection
 EndGlobal
