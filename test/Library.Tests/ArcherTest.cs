@@ -51,7 +51,7 @@ namespace RoleplayGameTests
             SpellsBook spellsBook = new SpellsBook(); // Supongamos que SpellsBook es una clase que representa un libro de hechizos
 
             // Act
-            knight.GetItem(spellsBook);
+            archer.GetItem(spellsBook);
 
             // Assert
             Assert.IsNull(archer.OtherItem); // Verifica que el libro de hechizos no se haya equipado correctamente en el caballero
