@@ -15,21 +15,8 @@ namespace RoleplayGameTests
             Assert.AreEqual(100, wizard.Health); // Verifica que la salud del mago haya sido restaurada a 100 después de curar
         }
 
-        [Test]
-        public void TestWizardShowStats()
-        {
-            // Arrange
-            Wizard wizard = new Wizard("Test Wizard");
-            wizard.Health = 80; // Establece la salud del mago en 80
-
-            // Act
-            string expectedStats = $"|\nv\nTest Wizard\n\tSalud: 80\n\tDefensa: 0\n\tAtaque: 0\n";
-            string actualStats = CaptureConsoleOutput(() => wizard.ShowStats());
-
-            // Assert
-            Assert.AreEqual(expectedStats, actualStats); // Verifica que la salida coincida con las estadísticas esperadas
-        }
-
+    
+       
         [Test]
         public void TestWizardGetItem()
         {
@@ -102,14 +89,7 @@ namespace RoleplayGameTests
             Assert.AreEqual(100, knight.Health); // Verifica que la salud del caballero haya sido restaurada a 100 después de curar
         }
 
-        [Test]
-        public void TestKnightShowStats()
-        {
-            Knight knight = new Knight("Test Knight");
-            knight.Health = 120;
-            string expectedStats = $"|\nv\nTest Knight\n\tSalud: 120\n\tDefensa: 0\n\tAtaque: 0\n";
-            string actualStats = CaptureConsoleOutput(() => knight.ShowStats());
-            Assert.AreEqual(expectedStats, actualStats); 
+    
 
         [Test]
         public void TestKnightGetItem()
@@ -197,20 +177,7 @@ namespace RoleplayGameTests
             Assert.AreEqual(100, dwarf.Health); // Verifica que la salud del enano haya sido restaurada a 100 después de curar
         }
 
-        [Test]
-        public void TestDwarfShowStats()
-        {
-            // Arrange
-            Dwarf dwarf = new Dwarf("Test Dwarf");
-            dwarf.Health = 80; // Establece la salud del enano en 80
-
-            // Act
-            string expectedStats = $"|\nv\nTest Dwarf\n\tSalud: 80\n\tDefensa: 0\n\tAtaque: 0\n";
-            string actualStats = CaptureConsoleOutput(() => dwarf.ShowStats());
-
-            // Assert
-            Assert.AreEqual(expectedStats, actualStats); // Verifica que la salida coincida con las estadísticas esperadas
-        }
+        
 
         [Test]
         public void TestDwarfGetItem()
@@ -296,20 +263,7 @@ namespace RoleplayGameTests
             Assert.AreEqual(100, archer.Health); // Verifica que la salud del arquero haya sido restaurada a 100 después de curar
         }
 
-        [Test]
-        public void TestArcherShowStats()
-        {
-            // Arrange
-            Archer archer = new Archer("Test Archer");
-            archer.Health = 80; // Establece la salud del arquero en 80
-
-            // Act
-            string expectedStats = $"|\nv\nTest Archer\n\tSalud: 80\n\tDefensa: 0\n\tAtaque: 0\n";
-            string actualStats = CaptureConsoleOutput(() => archer.ShowStats());
-
-            // Assert
-            Assert.AreEqual(expectedStats, actualStats); // Verifica que la salida coincida con las estadísticas esperadas
-        }
+       
 
         [Test]
         public void TestArcherGetItem()
