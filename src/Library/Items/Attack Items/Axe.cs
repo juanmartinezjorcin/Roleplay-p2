@@ -1,7 +1,7 @@
 namespace RoleplayGame
 {
-    public class Axe : Iitem
-    {   
+    public class Axe : IAttackItem
+    {
         public int AttackValue 
         {
             get
@@ -9,7 +9,5 @@ namespace RoleplayGame
                 return 25;
             } 
         }
-        
-        public bool itsMagic { get; } = false;
     }
 }

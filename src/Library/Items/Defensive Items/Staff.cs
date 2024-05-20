@@ -1,12 +1,12 @@
 namespace RoleplayGame
 {
-    public class Staff : Iitem
+    public class Staff: IAttackItem, IDefenseItem
     {
         public int AttackValue 
         {
             get
             {
-                return 100;
+                return 120;
             } 
         }
 
@@ -17,6 +17,5 @@ namespace RoleplayGame
                 return 100;
             }
         }
-        public bool itsMagic { get; } = true;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using RoleplayGame;
 
 namespace Program
@@ -7,32 +8,37 @@ namespace Program
     {
         static void Main(string[] args)
         {
+            
             SpellsBook book = new SpellsBook();
-            book.Spells = new Spell[]{ new Spell() };
+            book.AddSpell(new Fireball());
+            book.AddSpell(new Thunder());
 
-            Wizard gandalf = new Wizard("Gandalf");
-            Staff staff = new Staff();
-            gandalf.GetItem(staff);
-            gandalf.SpellsBook = book;
+            Hero gandalf = new Wizard("Mago");
+            gandalf.AddItem(book); 
 
-            Dwarf gimli = new Dwarf("Gimli");
-            Axe axe = new Axe();
-            gimli.GetItem(new Axe());
-            Helmet helmet = new Helmet();
-            gimli.GetItem(helmet);
-            Shield shield = new Shield();
-            gimli.GetItem(new Shield());
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-            Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
+            Foe goblin = new Goblin();
+            Foe goblin1 = new Goblin();
+            Foe goblin2 = new Goblin();
+            Foe goblin3 = new Goblin();
+            Foe goblin4 = new Goblin();
+            Foe goblin5 = new Goblin();
 
-            gandalf.Attack(gimli);
+            Foe golem = new Golem();
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            HeroVSFoe HvF = new HeroVSFoe();
+            HvF.AddCharacter(goblin);
+            HvF.AddCharacter(goblin1);
+            HvF.AddCharacter(goblin2);
+            HvF.AddCharacter(goblin3);
+            HvF.AddCharacter(goblin4);
+            HvF.AddCharacter(goblin5);
+            HvF.AddCharacter(golem);
 
-            gimli.Cure(int.MaxValue);
+            HvF.AddCharacter(gandalf);
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            HvF.DoEncounter();
+
         }
     }
 }

@@ -1,16 +1,13 @@
 namespace RoleplayGame
 {
-    public class Shield : Iitem
+    public class Helmet: IDefenseItem
     {
         public int DefenseValue
         {
             get
             {
-                return 14;
+                return 18;
             }
         }
-
-
-        public bool itsMagic { get; } = false;
     }
 }

@@ -1,15 +1,13 @@
 namespace RoleplayGame
 {
-    public class Sword : Iitem
+    public class Bow: IAttackItem
     {
         public int AttackValue 
         {
             get
             {
-                return 20;
+                return 15;
             } 
         }
-
-        public bool itsMagic { get; } = false;
     }
 }
