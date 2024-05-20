@@ -1,4 +1,4 @@
-name: Build & Test Running 
+name: .NET Core
 
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Configurando .Net 6...
+    - name: Configurando .Net 5...
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.400
+        dotnet-version: 5.0.201
     - name: Instalando dependencias..
       run: dotnet restore
     - name: Compilando...

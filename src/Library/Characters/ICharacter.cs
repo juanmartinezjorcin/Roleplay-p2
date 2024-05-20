@@ -1,20 +1,21 @@
-﻿namespace RoleplayGame
+namespace RoleplayGame
 {
     public interface ICharacter
     {
         string Name { get; set; }
+
+        int Health { get; set; }
+
         int AttackValue { get; }
+
         int DefenseValue { get; }
-        int Health { get; set;}
 
-        Iitem OtherItem { get; set; }
+        void AddItem(IItem item);
 
-        void ShowStats();
+        void RemoveItem(IItem item);
+
+        void Cure();
+
         void Attack(ICharacter character);
-        void Cure(int curacion);
-
-        void GetItem(Iitem item);
-
-        void RemoveItem(Iitem iitem);
     }
 }

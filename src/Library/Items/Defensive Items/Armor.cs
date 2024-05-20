@@ -1,8 +1,6 @@
-using System;
-
 namespace RoleplayGame
 {
-    public class Armor : Iitem
+    public class Armor: IDefenseItem
     {
         public int DefenseValue
         {
@@ -10,9 +8,6 @@ namespace RoleplayGame
             {
                 return 25;
             }
-            
         }
-
-        public bool itsMagic { get; } = false;
     }
 }

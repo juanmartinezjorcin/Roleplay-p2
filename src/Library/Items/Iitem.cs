@@ -1,10 +1,6 @@
-using System;
-
 namespace RoleplayGame
 {
-    public interface Iitem
+    public interface IItem
     {
-     bool itsMagic {get;}
-
     }
 }
