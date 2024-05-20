@@ -2,7 +2,7 @@ using System;
 
 namespace RoleplayGame 
 {
-    public class Archer : ICharacter
+    public class Archer : Hero
     {
         private int health = 120;
 
